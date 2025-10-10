@@ -69,6 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    'contact-messages': ContactMessage;
+    'page-content': PageContent;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,6 +79,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'contact-messages': ContactMessagesSelect<false> | ContactMessagesSelect<true>;
+    'page-content': PageContentSelect<false> | PageContentSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -86,7 +90,7 @@ export interface Config {
   };
   globals: {};
   globalsSelect: {};
-  locale: null;
+  locale: 'en' | 'pl';
   user: User & {
     collection: 'users';
   };
@@ -157,6 +161,198 @@ export interface Media {
   focalY?: number | null;
 }
 /**
+ * Contact form submissions from the website
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-messages".
+ */
+export interface ContactMessage {
+  id: number;
+  /**
+   * Full name of the person submitting the form
+   */
+  name: string;
+  /**
+   * Email address for contact
+   */
+  email: string;
+  /**
+   * Message content from the contact form
+   */
+  message: string;
+  /**
+   * Current status of the contact message
+   */
+  status: 'new' | 'in-progress' | 'replied' | 'closed';
+  /**
+   * Priority level of the message
+   */
+  priority?: ('low' | 'normal' | 'high' | 'urgent') | null;
+  /**
+   * Source of the contact message
+   */
+  source?: string | null;
+  /**
+   * IP address of the submitter
+   */
+  ipAddress?: string | null;
+  /**
+   * Browser user agent
+   */
+  userAgent?: string | null;
+  /**
+   * Internal notes about this contact message
+   */
+  notes?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage content for different sections of the website
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "page-content".
+ */
+export interface PageContent {
+  id: number;
+  /**
+   * Select the section this content belongs to
+   */
+  sectionId: 'hero' | 'about-us' | 'shopen' | 'shopen-features' | 'technology' | 'team' | 'faq' | 'contact' | 'footer';
+  /**
+   * Main title/heading for the section
+   */
+  title: string;
+  /**
+   * Optional subtitle for the section
+   */
+  subtitle?: string | null;
+  /**
+   * Main content/description for the section
+   */
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Additional paragraph or content for the section
+   */
+  additionalContent?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Text for buttons or call-to-action elements
+   */
+  ctaText?: string | null;
+  /**
+   * Media files used in this section
+   */
+  media?: {
+    /**
+     * Background image for the section
+     */
+    backgroundImage?: (number | null) | Media;
+    /**
+     * Main image for the section content
+     */
+    sectionImage?: (number | null) | Media;
+    /**
+     * Logo image for branding
+     */
+    logo?: (number | null) | Media;
+  };
+  metadata?: {
+    /**
+     * Toggle section visibility on the website
+     */
+    showSection?: boolean | null;
+    /**
+     * Order in which sections appear on the page
+     */
+    order?: number | null;
+  };
+  /**
+   * Content for carousel sections (Team, Technology, Shopen, Shopen Features)
+   */
+  carouselItems?:
+    | {
+        title: string;
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        additionalText?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        image?: (number | null) | Media;
+        role?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
@@ -170,6 +366,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'contact-messages';
+        value: number | ContactMessage;
+      } | null)
+    | ({
+        relationTo: 'page-content';
+        value: number | PageContent;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -252,6 +456,60 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-messages_select".
+ */
+export interface ContactMessagesSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  message?: T;
+  status?: T;
+  priority?: T;
+  source?: T;
+  ipAddress?: T;
+  userAgent?: T;
+  notes?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "page-content_select".
+ */
+export interface PageContentSelect<T extends boolean = true> {
+  sectionId?: T;
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  additionalContent?: T;
+  ctaText?: T;
+  media?:
+    | T
+    | {
+        backgroundImage?: T;
+        sectionImage?: T;
+        logo?: T;
+      };
+  metadata?:
+    | T
+    | {
+        showSection?: T;
+        order?: T;
+      };
+  carouselItems?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        additionalText?: T;
+        image?: T;
+        role?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
