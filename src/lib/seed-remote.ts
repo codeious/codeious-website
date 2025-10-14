@@ -74,7 +74,7 @@ const seedRemote = async () => {
     typescript: {
       outputFile: path.resolve(dirname, '..', 'payload-types.ts'),
     },
-    db: sqliteD1Adapter({ binding: cloudflare.env.D1 }),
+    db: sqliteD1Adapter({ binding: cloudflare.env.D1 as any }),
     localization: {
       locales: [
         {
@@ -92,8 +92,13 @@ const seedRemote = async () => {
     plugins: [
       payloadCloudPlugin(),
       r2Storage({
-        bucket: cloudflare.env.R2,
-        collections: { media: true },
+        bucket: cloudflare.env.R2 as any,
+        collections: {
+          media: {
+            generateFileURL: ({ filename }) =>
+              `https://pub-3609f4891cb542738b202ce8474db4eb.r2.dev/${filename}`,
+          },
+        },
       }),
     ],
   })
