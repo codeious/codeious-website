@@ -34,7 +34,7 @@ export default async function HeroSection({ locale = 'en' }: HeroSectionProps) {
   const backgroundImageAlt = heroContent?.media?.backgroundImage?.alt || 'Hero background'
 
   return (
-    <section className="relative h-[500px] sm:h-[600px] md:h-[700px] overflow-hidden">
+    <section className="relative h-[600px] sm:h-[700px] md:h-[800px] overflow-hidden">
       {/* Background Image Container */}
       <div className="absolute inset-0">
         <Image

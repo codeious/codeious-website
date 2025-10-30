@@ -98,9 +98,8 @@ export function Navigation({ logoData }: NavigationProps) {
             </Button>
           </nav>
           <div className="flex items-center gap-4">
-            <LanguageSwitcher />
             <Button
-              className="rounded-full bg-white text-green-500 font-bold text-lg px-8 py-3 hover:bg-green-50 transition-colors"
+              className="rounded-full bg-white text-black font-bold text-lg px-8 py-3 hover:bg-green-50 transition-colors"
               onClick={() => scrollToSection('contact')}
             >
               Contact
@@ -156,9 +155,6 @@ export function Navigation({ logoData }: NavigationProps) {
                 <Button className="m-4 rounded-full" onClick={() => scrollToSection('contact')}>
                   Contact
                 </Button>
-                <div className="m-4 pt-4 border-t">
-                  <LanguageSwitcher />
-                </div>
               </nav>
             </SheetContent>
           </Sheet>
