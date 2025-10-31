@@ -17,7 +17,7 @@ export default async function FaqSection({ locale = 'en' }: FaqSectionProps) {
   const faqContent = await getPageContent('faq', locale)
 
   return (
-    <section id="faq" className="mx-auto max-w-[1720px] px-4 py-4 md:py-12 md:px-12">
+    <section id="faq" className="mx-auto max-w-[1720px] px-4 py-8 md:py-12 md:px-12">
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="space-y-6 lg:w-1/3">
           <SectionTitle

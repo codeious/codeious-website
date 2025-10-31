@@ -78,7 +78,7 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
 
   return (
     <section id="shopen" className="relative bg-primary overflow-hidden">
-      <div className="mx-auto max-w-[1720px] px-4 py-4 md:py-12 md:px-12">
+      <div className="mx-auto max-w-[1720px] px-4 py-8 md:py-12 md:px-12">
         <AppCarousel
           showNavigation={false}
           showIndicators={true}

@@ -14,7 +14,7 @@ export default async function ContactSection({ locale = 'en' }: ContactSectionPr
   return (
     <section
       id="contact"
-      className="px-4 py-4 md:py-12 md:px-12"
+      className="px-4 py-8 md:py-12 md:px-12"
       style={{ backgroundColor: '#60EF7A' }}
     >
       <div className="mx-auto max-w-[1720px] space-y-12">

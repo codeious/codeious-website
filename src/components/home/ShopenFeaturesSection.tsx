@@ -34,7 +34,7 @@ export default async function ShopenFeaturesSection({ locale = 'en' }: ShopenFea
     []
 
   return (
-    <section className="mx-auto max-w-[1721px] py-4 md:py-12 px-4 md:px-12">
+    <section className="mx-auto max-w-[1721px] px-4 py-8 md:py-12 md:px-12">
       <div className="mb-16">
         <SectionTitle
           title={shopenFeaturesContent?.title || fallbackContent?.title || 'Shopen in a nutshell'}

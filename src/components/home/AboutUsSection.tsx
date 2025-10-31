@@ -12,7 +12,7 @@ export default async function AboutUsSection({ locale = 'en' }: AboutUsSectionPr
   const aboutUsContent = await getPageContent('about-us', locale)
 
   return (
-    <section id="about-us" className="mx-auto max-w-[1720px] px-4 py-4 md:py-12 md:px-12">
+    <section id="about-us" className="mx-auto max-w-[1720px] px-4 py-8 md:py-12 md:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10 items-center">
         <div className="flex items-start">
           <SectionTitle title={aboutUsContent?.title || 'About Us'} markerColor="green" />
