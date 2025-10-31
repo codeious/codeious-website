@@ -33,14 +33,14 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
 
   const sectionData = shopenContent?.media?.sectionImage
     ? {
-      url: shopenContent.media.sectionImage.url,
-      alt: shopenContent.media.sectionImage.alt || 'Codeious logo',
-    }
+        url: shopenContent.media.sectionImage.url,
+        alt: shopenContent.media.sectionImage.alt || 'Codeious logo',
+      }
     : fallbackContent?.media?.sectionImage
       ? {
-        url: `/api/media/file/${fallbackContent.media.sectionImage}`,
-        alt: 'Codeious logo',
-      }
+          url: `/api/media/file/${fallbackContent.media.sectionImage}`,
+          alt: 'Codeious logo',
+        }
       : null
 
   const renderShopenContent = (content: (typeof carouselItems)[0]) => (
@@ -63,10 +63,10 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
           </div>
         </div>
       </div>
-      
+
       {/* Image Content */}
       <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-        <div className="relative w-full max-w-[500px] h-[300px] md:h-[400px]">
+        <div className="relative w-full max-w-[500px] xl:max-w-[700px] h-[300px] md:h-[400px] xl:h-[600px]">
           <Image
             src={sectionData?.url || '/api/media/file/shopen-section-image.png'}
             alt={sectionData?.alt || 'Shopen platform interface on laptop'}
@@ -77,7 +77,7 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
       </div>
     </div>
   )
-  
+
   return (
     <section id="shopen" className="relative py-20 bg-primary overflow-hidden">
       <div className="mx-auto max-w-[1720px] px-4 md:px-8">
