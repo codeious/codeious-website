@@ -37,16 +37,19 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   // const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
 
   return (
-    <div className="bg-background">
-      <HeroSection locale={locale} />
-      <AboutUsSection locale={locale} />
-      <ShopenSection locale={locale} />
-      <ShopenFeaturesSection locale={locale} />
-      {/* <TechnologySection locale={locale} /> */}
-      <TeamSection locale={locale} />
-      <FaqSection locale={locale} />
-      <ContactSection locale={locale} />
-      <FooterSection locale={locale} />
+    <div className="bg-white">
+      {/* All sections including hero and footer constrained to 1720px with white background on overflow */}
+      <div className="mx-auto max-w-[1720px] bg-white">
+        <HeroSection locale={locale} />
+        <AboutUsSection locale={locale} />
+        <ShopenSection locale={locale} />
+        <ShopenFeaturesSection locale={locale} />
+        {/* <TechnologySection locale={locale} /> */}
+        <TeamSection locale={locale} />
+        <FaqSection locale={locale} />
+        <ContactSection locale={locale} />
+        <FooterSection locale={locale} />
+      </div>
     </div>
   )
 }
