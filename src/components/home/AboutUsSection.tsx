@@ -1,6 +1,7 @@
 import { getPageContent } from '@/lib/content'
 import { renderRichText } from '@/lib/renderUtils'
 import { type Locale } from '@/lib/locale'
+import { SectionTitle } from '@/components/common/SectionTitle'
 
 interface AboutUsSectionProps {
   locale?: Locale
@@ -14,9 +15,7 @@ export default async function AboutUsSection({ locale = 'en' }: AboutUsSectionPr
     <section id="about-us" className="mx-auto max-w-[1720px] py-20 px-4 md:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10 items-center">
         <div className="flex items-start">
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-            {aboutUsContent?.title || 'About Us'}
-          </h2>
+          <SectionTitle title={aboutUsContent?.title || 'About Us'} markerColor="green" />
         </div>
         <div className="flex items-start">
           <div className="text-xl md:text-3xl tracking-tight text-gray-800 leading-tight">

@@ -6,6 +6,7 @@ import {
 } from '@/components/ui/accordion'
 import { getPageContent } from '@/lib/content'
 import { type Locale } from '@/lib/locale'
+import { SectionTitle } from '@/components/common/SectionTitle'
 
 interface FaqSectionProps {
   locale?: Locale
@@ -19,11 +20,11 @@ export default async function FaqSection({ locale = 'en' }: FaqSectionProps) {
     <section id="faq" className="py-20 mx-auto max-w-[1720px] px-4 md:px-8">
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="space-y-6 lg:w-1/3">
-          <div>
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-800">
-              {faqContent?.title || 'FAQ - Find answers to your questions'}
-            </h2>
-          </div>
+          <SectionTitle
+            title={faqContent?.title || 'FAQ - Find answers to your questions'}
+            markerColor="green"
+            textColor="text-gray-800"
+          />
         </div>
 
         <div className="lg:w-2/3">

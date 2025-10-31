@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { AppCarousel } from '@/components/common/AppCarousel'
 import { getPageContent, richTextToPlainText, getFallbackContent } from '@/lib/content'
-import { renderRichText } from '@/lib/renderUtils'
 import { type Locale } from '@/lib/locale'
+import { SectionTitle } from '@/components/common/SectionTitle'
 
 interface ShopenSectionProps {
   locale?: Locale
@@ -48,9 +48,7 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
       {/* Text Content */}
       <div className="w-full md:w-1/2 space-y-8">
         <div className="space-y-6">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-white">{content.title}</h2>
-          </div>
+          <SectionTitle title={content.title} textColor="text-white" />
         </div>
         <div className="space-y-4 md:space-y-6">
           <p className="text-lg md:text-xl lg:text-2xl text-white tracking-tight font-bold">

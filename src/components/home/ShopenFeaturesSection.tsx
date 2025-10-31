@@ -1,6 +1,7 @@
 import { Zap, Palette, MousePointer, Brain, MessageCircle, Clock } from 'lucide-react'
 import { getPageContent, richTextToPlainText, getFallbackContent } from '@/lib/content'
 import { type Locale } from '@/lib/locale'
+import { SectionTitle } from '@/components/common/SectionTitle'
 
 interface ShopenFeaturesSectionProps {
   locale?: Locale
@@ -35,9 +36,11 @@ export default async function ShopenFeaturesSection({ locale = 'en' }: ShopenFea
   return (
     <section className="mx-auto max-w-[1721px] py-20 px-4 md:px-8">
       <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          {shopenFeaturesContent?.title || fallbackContent?.title || 'Shopen in a nutshell'}
-        </h2>
+        <SectionTitle
+          title={shopenFeaturesContent?.title || fallbackContent?.title || 'Shopen in a nutshell'}
+          markerColor="green"
+          textColor="text-gray-800"
+        />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {features.map((feature) => {

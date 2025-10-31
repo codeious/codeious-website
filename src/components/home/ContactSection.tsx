@@ -1,5 +1,6 @@
 import { getPageContent } from '@/lib/content'
 import { type Locale } from '@/lib/locale'
+import { SectionTitle } from '@/components/common/SectionTitle'
 import ContactForm from './ContactForm'
 
 interface ContactSectionProps {
@@ -14,12 +15,11 @@ export default async function ContactSection({ locale = 'en' }: ContactSectionPr
     <section id="contact" className="py-20 px-4 md:px-8" style={{ backgroundColor: '#60EF7A' }}>
       <div className="mx-auto max-w-[1720px] space-y-12">
         <div className="space-y-6">
-          <div className="w-12 h-3 md:w-12 md:h-4 bg-white rounded-sm"></div>
-          <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
-              {contactContent?.title || 'Get in touch'}
-            </h2>
-          </div>
+          <SectionTitle
+            title={contactContent?.title || 'Get in touch'}
+            markerColor="white"
+            textColor="text-gray-800"
+          />
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">

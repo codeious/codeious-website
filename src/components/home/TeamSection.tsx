@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { AppCarousel } from '@/components/common/AppCarousel'
 import { getPageContent, richTextToPlainText, getFallbackContent } from '@/lib/content'
 import { type Locale } from '@/lib/locale'
+import { SectionTitle } from '@/components/common/SectionTitle'
 
 interface TeamSectionProps {
   locale?: Locale
@@ -71,11 +72,11 @@ export default async function TeamSection({ locale = 'en' }: TeamSectionProps) {
       <div className="mx-auto max-w-[1722px] px-4 md:px-8">
         <div className="space-y-20">
           <div className="space-y-6 text-center md:text-left">
-            <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
-                {teamContent?.title || fallbackContent?.title || 'Meet the team'}
-              </h2>
-            </div>
+            <SectionTitle
+              title={teamContent?.title || fallbackContent?.title || 'Meet the team'}
+              markerColor="green"
+              textColor="text-gray-800"
+            />
           </div>
 
           <AppCarousel showNavigation={false}>
