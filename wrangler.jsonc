@@ -18,8 +18,8 @@
   "d1_databases": [
     {
       "binding": "D1",
-      "database_id": "4ef8dd9f-dee9-4120-b837-328a59e84e75",
       "database_name": "codeious-website",
+      "database_id": "efda84d3-f295-4bf6-bea9-5902bc083f82",
       "remote": true,
     },
   ],
@@ -41,7 +41,6 @@
     //   "bucket_name": "<BUCKET_NAME>",
     // },
   ],
-
   // Here's how to configure an additional environment
   // It can be deployed with `CLOUDFLARE_ENV=staging pnpm run deploy`
   // "env": {
