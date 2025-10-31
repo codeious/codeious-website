@@ -146,26 +146,18 @@ export default function ContactForm({ ctaText = 'Send' }: ContactFormProps) {
     }
   }
 
-  const getInputClassName = (field: string) => {
+  const getInputClassName = (_field: string) => {
     const baseClasses =
       'h-14 md:h-16 text-lg md:text-xl text-gray-800 placeholder:text-gray-500 placeholder:text-lg md:placeholder:text-xl placeholder:font-normal rounded-lg w-full px-4 py-3 transition-all duration-200 ease-in-out outline-none'
 
-    if (hasError(field)) {
-      return `${baseClasses} bg-white focus:border-red-500`
-    }
-
-    return `${baseClasses} border-none bg-[#8AFF9F] focus:bg-white hover:bg-white`
+    return `${baseClasses} border-none bg-[#8AFF9F] hover:opacity-70 focus:bg-white`
   }
 
-  const getTextareaClassName = (field: string) => {
+  const getTextareaClassName = (_field: string) => {
     const baseClasses =
       'text-lg md:text-xl text-gray-800 placeholder:text-gray-500 placeholder:text-lg md:placeholder:text-xl placeholder:font-normal rounded-lg w-full px-4 py-3 transition-all duration-200 ease-in-out outline-none resize-none'
 
-    if (hasError(field)) {
-      return `${baseClasses} bg-white focus:border-red-500`
-    }
-
-    return `${baseClasses} border-none bg-[#8AFF9F] focus:bg-white hover:bg-white`
+    return `${baseClasses} border-none bg-[#8AFF9F] hover:opacity-70 focus:bg-white`
   }
 
   return (
