@@ -39,7 +39,7 @@ export default async function ShopenFeaturesSection({ locale = 'en' }: ShopenFea
         <SectionTitle
           title={shopenFeaturesContent?.title || fallbackContent?.title || 'Shopen in a nutshell'}
           markerColor="green"
-          textColor="text-gray-800"
+          textColor="text-black"
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -50,12 +50,8 @@ export default async function ShopenFeaturesSection({ locale = 'en' }: ShopenFea
               <div className="w-[86px] h-[86px] bg-green-100 rounded-full flex items-center justify-center">
                 <IconComponent className="w-10 h-10 text-green-600" />
               </div>
-              <h3 className="text-2xl font-semibold tracking-tight text-gray-800">
-                {feature.title}
-              </h3>
-              <p className="text-xl font-light tracking-tight text-gray-800">
-                {feature.description}
-              </p>
+              <h3 className="text-2xl font-semibold tracking-tight text-black">{feature.title}</h3>
+              <p className="text-xl font-light tracking-tight text-black">{feature.description}</p>
             </div>
           )
         })}

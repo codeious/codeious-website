@@ -50,18 +50,16 @@ export default async function TeamSection({ locale = 'en' }: TeamSectionProps) {
           />
         </div>
         <div className="space-y-1 text-center md:text-center lg:text-left">
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
-            {member.name}
-          </h3>
-          <p className="text-xl md:text-2xl lg:text-3xl font-light text-gray-800">{member.role}</p>
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">{member.name}</h3>
+          <p className="text-xl md:text-2xl lg:text-3xl font-light text-black">{member.role}</p>
         </div>
       </div>
 
       <div className="flex-1">
-        <p className="text-lg md:text-xl lg:text-2xl tracking-tight text-gray-800 leading-relaxed !mt-0">
+        <p className="text-lg md:text-xl lg:text-2xl tracking-tight text-black leading-relaxed !mt-0">
           {member.bio}
         </p>
-        <p className="text-lg md:text-xl lg:text-2xl tracking-tight text-gray-800 leading-relaxed mt-6">
+        <p className="text-lg md:text-xl lg:text-2xl tracking-tight text-black leading-relaxed mt-6">
           {member.additionalBio}
         </p>
       </div>
@@ -75,7 +73,7 @@ export default async function TeamSection({ locale = 'en' }: TeamSectionProps) {
             <SectionTitle
               title={teamContent?.title || fallbackContent?.title || 'Meet the team'}
               markerColor="green"
-              textColor="text-gray-800"
+              textColor="text-black"
             />
           </div>
 

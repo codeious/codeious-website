@@ -83,7 +83,7 @@ export default async function TechnologySection({ locale = 'en' }: TechnologySec
             {/* Render the additional content from CMS which includes the Go section */}
             {technologyContent?.additionalContent ? (
               <div className="space-y-6">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">
                   {technologyContent.ctaText || fallbackContent?.ctaText || "Let's GO!"}
                 </h3>
                 <div className="space-y-4">
@@ -93,7 +93,7 @@ export default async function TechnologySection({ locale = 'en' }: TechnologySec
             ) : (
               // Fallback content from seedData
               <div className="space-y-6">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">
                   {fallbackContent?.ctaText || "Let's GO!"}
                 </h3>
                 {fallbackContent?.additionalContent && (

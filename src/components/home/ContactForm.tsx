@@ -148,14 +148,14 @@ export default function ContactForm({ ctaText = 'Send' }: ContactFormProps) {
 
   const getInputClassName = (_field: string) => {
     const baseClasses =
-      'h-14 md:h-16 text-lg md:text-xl text-gray-800 placeholder:text-gray-500 placeholder:text-lg md:placeholder:text-xl placeholder:font-normal rounded-lg w-full px-4 py-3 transition-all duration-200 ease-in-out outline-none'
+      'h-14 md:h-16 text-lg md:text-xl text-black placeholder:text-black placeholder:text-lg md:placeholder:text-xl placeholder:font-normal rounded-lg w-full px-4 py-3 transition-all duration-200 ease-in-out outline-none'
 
     return `${baseClasses} border-none bg-[#8AFF9F] hover:opacity-70 focus:bg-white`
   }
 
   const getTextareaClassName = (_field: string) => {
     const baseClasses =
-      'text-lg md:text-xl text-gray-800 placeholder:text-gray-500 placeholder:text-lg md:placeholder:text-xl placeholder:font-normal rounded-lg w-full px-4 py-3 transition-all duration-200 ease-in-out outline-none resize-none'
+      'text-lg md:text-xl text-black placeholder:text-black placeholder:text-lg md:placeholder:text-xl placeholder:font-normal rounded-lg w-full px-4 py-3 transition-all duration-200 ease-in-out outline-none resize-none'
 
     return `${baseClasses} border-none bg-[#8AFF9F] hover:opacity-70 focus:bg-white`
   }
@@ -166,7 +166,7 @@ export default function ContactForm({ ctaText = 'Send' }: ContactFormProps) {
       {submitStatus.type && (
         <div
           className={`${
-            submitStatus.type === 'success' ? 'text-gray-800' : 'text-red-600'
+            submitStatus.type === 'success' ? 'text-black' : 'text-red-600'
           } text-lg md:text-xl font-medium mb-4`}
         >
           {submitStatus.message}
@@ -245,14 +245,14 @@ export default function ContactForm({ ctaText = 'Send' }: ContactFormProps) {
             id="consent"
             checked={formData.consent}
             onChange={(e) => handleInputChange('consent', e.target.checked)}
-            className="mt-1 h-6 w-9 rounded border-2 border-gray-600 text-gray-800 focus:ring-0 focus:ring-offset-0"
+            className="mt-1 h-6 w-9 rounded border-2 border-gray-600 text-black focus:ring-0 focus:ring-offset-0"
             style={{
               backgroundColor: formData.consent ? '#1f2937' : '#8AFF9F',
             }}
           />
           <label
             htmlFor="consent"
-            className="text-sm md:text-base text-gray-800 leading-tight cursor-pointer"
+            className="text-sm md:text-base text-black leading-tight cursor-pointer"
           >
             By submitting the form, you agree to our Terms and Conditions and Privacy Policy. Your
             information will be processed securely to assist you promptly.
