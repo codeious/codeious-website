@@ -27,14 +27,17 @@ export default async function ContactSection({ locale = 'en' }: ContactSectionPr
 
           <div className="lg:w-1/3 space-y-6">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+              <h3 className="text-2xl md:text-3xl font-normal text-gray-800">
                 {contactContent?.subtitle || 'Connect with us'}
               </h3>
             </div>
             <div className="space-y-6">
-              <p className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-gray-800 underline">
+              <a
+                href="mailto:contact@codeious.io"
+                className="!text-gray-800 text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight underline cursor-pointer hover:opacity-75 transition-opacity duration-200 block"
+              >
                 contact@codeious.io
-              </p>
+              </a>
               <p className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-gray-800">
                 +48 500.400.400
               </p>

@@ -118,3 +118,69 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Contact Form Specific Styles */
+@layer components {
+  .contact-form input,
+  .contact-form textarea {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    ring: none !important;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    ring: none !important;
+  }
+  
+  /* Override any native validation styling */
+  .contact-form input:invalid,
+  .contact-form textarea:invalid {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+  .contact-form input:user-invalid,
+  .contact-form textarea:user-invalid {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+  /* Only show red border when we explicitly add the class */
+  .contact-form input.border-red-500,
+  .contact-form textarea.border-red-500 {
+    border: 2px solid #ef4444 !important;
+  }
+  
+  /* Custom checkbox styling */
+  .contact-form input[type="checkbox"] {
+    appearance: none;
+    background-color: white;
+    border: 2px solid #4b5563;
+    border-radius: 0.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .contact-form input[type="checkbox"]:checked {
+    background-color: #1f2937;
+    border-color: #1f2937;
+  }
+  
+  .contact-form input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+}
