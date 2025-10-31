@@ -31,6 +31,18 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
     })) ||
     []
 
+  const sectionData = shopenContent?.media?.sectionImage
+    ? {
+      url: shopenContent.media.sectionImage.url,
+      alt: shopenContent.media.sectionImage.alt || 'Codeious logo',
+    }
+    : fallbackContent?.media?.sectionImage
+      ? {
+        url: `/api/media/file/${fallbackContent.media.sectionImage}`,
+        alt: 'Codeious logo',
+      }
+      : null
+
   const renderShopenContent = (content: (typeof carouselItems)[0]) => (
     <div className="flex flex-col justify-between h-full">
       <div className="space-y-8 md:space-y-16">
@@ -64,8 +76,8 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
         <div className="lg:w-1/2 lg:absolute lg:right-8 lg:top-8 lg:bottom-0 flex justify-center lg:justify-end">
           <div className="relative w-full lg:w-[55vw] h-full min-h-[400px] lg:min-h-full">
             <Image
-              src="/api/media/file/shopen-section-image.png"
-              alt="Shopen platform interface on laptop"
+              src={sectionData.url || '/api/media/file/shopen-section-image.png'}
+              alt={sectionData.alt || 'Shopen platform interface on laptop'}
               fill
               className="object-cover object-center"
             />
