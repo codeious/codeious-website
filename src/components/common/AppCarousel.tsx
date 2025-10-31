@@ -84,7 +84,7 @@ export function AppCarousel({
       </Carousel>
 
       {showIndicators && count > 1 && (
-        <div className="flex gap-4 md:gap-6 mt-8 lg:mt-0 justify-center lg:justify-start">
+        <div className="flex gap-4 md:gap-6 mt-8 justify-center">
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}

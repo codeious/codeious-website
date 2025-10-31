@@ -44,8 +44,9 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
       : null
 
   const renderShopenContent = (content: (typeof carouselItems)[0]) => (
-    <div className="flex flex-col justify-between h-full">
-      <div className="space-y-8 md:space-y-16">
+    <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-16">
+      {/* Text Content */}
+      <div className="w-full md:w-1/2 space-y-8">
         <div className="space-y-6">
           <div>
             <h2 className="text-2xl md:text-4xl font-bold text-white">{content.title}</h2>
@@ -62,27 +63,27 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
           </div>
         </div>
       </div>
+      
+      {/* Image Content */}
+      <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+        <div className="relative w-full max-w-[500px] h-[300px] md:h-[400px]">
+          <Image
+            src={sectionData?.url || '/api/media/file/shopen-section-image.png'}
+            alt={sectionData?.alt || 'Shopen platform interface on laptop'}
+            fill
+            className="object-cover object-center rounded-lg"
+          />
+        </div>
+      </div>
     </div>
   )
+  
   return (
     <section id="shopen" className="relative py-20 bg-primary overflow-hidden">
-      <div className="mx-auto max-w-[1720px] px-4 md:px-8 flex flex-col lg:flex-row justify-between gap-16 lg:gap-32">
-        <div className="lg:w-1/2 z-10 lg:pr-16">
-          <AppCarousel showNavigation={false} className="h-full">
-            {carouselItems.map((content) => renderShopenContent(content))}
-          </AppCarousel>
-        </div>
-
-        <div className="lg:w-1/2 lg:absolute lg:right-8 lg:top-8 lg:bottom-0 flex justify-center lg:justify-end">
-          <div className="relative w-full lg:w-[55vw] h-full min-h-[400px] lg:min-h-full">
-            <Image
-              src={sectionData.url || '/api/media/file/shopen-section-image.png'}
-              alt={sectionData.alt || 'Shopen platform interface on laptop'}
-              fill
-              className="object-cover object-center"
-            />
-          </div>
-        </div>
+      <div className="mx-auto max-w-[1720px] px-4 md:px-8">
+        <AppCarousel showNavigation={false} showIndicators={true} className="h-full">
+          {carouselItems.map((content) => renderShopenContent(content))}
+        </AppCarousel>
       </div>
     </section>
   )
