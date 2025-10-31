@@ -71,7 +71,7 @@ export function AppCarousel({
 
   // Define colors based on mode
   const getIndicatorClasses = (isActive: boolean) => {
-    const baseClasses = 'h-3 md:h-4 rounded-sm transition-all duration-200'
+    const baseClasses = 'h-3 md:h-4 rounded-xl transition-all duration-200'
     const widthClasses = isActive ? 'w-16 md:w-20' : 'w-12 md:w-12'
 
     if (indicatorMode === 'dark') {

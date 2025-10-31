@@ -68,8 +68,8 @@ export default async function TeamSection({ locale = 'en' }: TeamSectionProps) {
     </div>
   )
   return (
-    <section id="team" className="py-20 bg-gray-100">
-      <div className="mx-auto max-w-[1722px] px-4 md:px-8">
+    <section id="team" className=" bg-gray-100">
+      <div className="mx-auto max-w-[1722px] px-4 py-4 md:py-12 md:px-12">
         <div className="space-y-20">
           <div className="space-y-6 text-center md:text-left">
             <SectionTitle

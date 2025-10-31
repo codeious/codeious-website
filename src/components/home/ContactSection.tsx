@@ -12,7 +12,11 @@ export default async function ContactSection({ locale = 'en' }: ContactSectionPr
   const contactContent = await getPageContent('contact', locale)
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-8" style={{ backgroundColor: '#60EF7A' }}>
+    <section
+      id="contact"
+      className="px-4 py-4 md:py-12 md:px-12"
+      style={{ backgroundColor: '#60EF7A' }}
+    >
       <div className="mx-auto max-w-[1720px] space-y-12">
         <div className="space-y-6">
           <SectionTitle

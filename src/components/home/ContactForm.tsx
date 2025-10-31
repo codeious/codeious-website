@@ -274,7 +274,7 @@ export default function ContactForm({ ctaText = 'Send' }: ContactFormProps) {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full h-14 md:h-16 text-lg md:text-xl font-bold bg-gray-800 hover:bg-gray-700 text-white rounded-3xl transition-colors"
+        className="w-full text-lg md:text-xl font-bold bg-black hover:bg-gray-800 text-white rounded-3xl transition-colors"
       >
         {isSubmitting ? 'Sending...' : ctaText}
       </Button>
