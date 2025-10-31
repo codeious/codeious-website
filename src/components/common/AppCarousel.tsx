@@ -18,6 +18,7 @@ interface AppCarouselProps {
   showNavigation?: boolean
   autoPlay?: boolean
   autoPlayInterval?: number
+  indicatorMode?: 'light' | 'dark'
 }
 
 export function AppCarousel({
@@ -27,6 +28,7 @@ export function AppCarousel({
   showNavigation = true,
   autoPlay = false,
   autoPlayInterval = 5000,
+  indicatorMode = 'light',
 }: AppCarouselProps) {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
@@ -67,6 +69,25 @@ export function AppCarousel({
     }
   }
 
+  // Define colors based on mode
+  const getIndicatorClasses = (isActive: boolean) => {
+    const baseClasses = 'h-3 md:h-4 rounded-sm transition-all duration-200'
+    const widthClasses = isActive ? 'w-16 md:w-20' : 'w-12 md:w-12'
+
+    if (indicatorMode === 'dark') {
+      if (isActive) {
+        return `${baseClasses} ${widthClasses} bg-[#60EF7A]`
+      }
+      return `${baseClasses} ${widthClasses} bg-[#14532D] hover:bg-[#138E44]`
+    } else {
+      // light mode
+      if (isActive) {
+        return `${baseClasses} ${widthClasses} bg-[#60EF7A]`
+      }
+      return `${baseClasses} ${widthClasses} bg-[#C5C5C5] hover:bg-[#858585]`
+    }
+  }
+
   return (
     <div className={cn('w-full', className)}>
       <Carousel setApi={setApi} className="w-full">
@@ -89,10 +110,7 @@ export function AppCarousel({
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={cn(
-                'w-12 h-3 md:w-12 md:h-4 rounded-sm transition-colors',
-                current === index + 1 ? 'bg-green-500' : 'bg-white hover:bg-gray-200',
-              )}
+              className={getIndicatorClasses(current === index + 1)}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

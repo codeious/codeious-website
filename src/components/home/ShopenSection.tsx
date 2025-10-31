@@ -79,7 +79,12 @@ export default async function ShopenSection({ locale = 'en' }: ShopenSectionProp
   return (
     <section id="shopen" className="relative py-20 bg-primary overflow-hidden">
       <div className="mx-auto max-w-[1720px] px-4 md:px-8">
-        <AppCarousel showNavigation={false} showIndicators={true} className="h-full">
+        <AppCarousel
+          showNavigation={false}
+          showIndicators={true}
+          indicatorMode="dark"
+          className="h-full"
+        >
           {carouselItems.map((content) => renderShopenContent(content))}
         </AppCarousel>
       </div>

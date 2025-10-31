@@ -102,7 +102,7 @@ export default function CMSShopenSection({ locale = 'en' }: CMSShopenSectionProp
     <section id="shopen" className="relative py-20 bg-primary overflow-hidden">
       <div className="mx-auto max-w-[1720px] px-4 md:px-8 flex flex-col lg:flex-row justify-between gap-16 lg:gap-32">
         <div className="lg:w-1/2 z-10 lg:pr-16">
-          <AppCarousel showNavigation={false} className="h-full">
+          <AppCarousel showNavigation={false} indicatorMode="dark" className="h-full">
             {carouselItems.map((item, index) => (
               <div key={(item as any).id || index}>{renderCarouselItem(item)}</div>
             ))}
