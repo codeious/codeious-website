@@ -17,9 +17,10 @@ import { PageContent } from './collections/PageContent'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-const cloudflareRemoteBindings = process.env.NODE_ENV === 'production'
+const isMigrationOrGenerate = process.argv.find((value) => value.match(/^(generate|migrate):?/))
+const cloudflareRemoteBindings = process.env.NODE_ENV === 'production' && !isMigrationOrGenerate
 const cloudflare =
-  process.argv.find((value) => value.match(/^(generate|migrate):?/)) || !cloudflareRemoteBindings
+  isMigrationOrGenerate || !cloudflareRemoteBindings
     ? await getCloudflareContextFromWrangler()
     : await getCloudflareContext({ async: true })
 
