@@ -37,14 +37,14 @@ export default async function AboutUsSection({ locale = 'en' }: AboutUsSectionPr
         <div className="space-y-4">
           <div className="lg:-space-y-6">
             <p className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-black !m-0 lg:leading-none">
-              12
+              18
             </p>
             <p className="text-2xl sm:text-3xl lg:text-4xl font-extralight tracking-tight text-black !m-0 lg:leading-none">
               years
             </p>
           </div>
           <p className="text-base sm:text-lg lg:text-xl font-light tracking-tight text-black">
-            With 15 years of experience, we&apos;ve honed our expertise to deliver cutting-edge
+            With 18 years of experience, we&apos;ve honed our expertise to deliver cutting-edge
             solutions in the ecommerce space.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default async function AboutUsSection({ locale = 'en' }: AboutUsSectionPr
         <div className="space-y-4">
           <div className="lg:-space-y-6">
             <p className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-black !m-0 lg:leading-none">
-              100k
+              300k
             </p>
             <p className="text-2xl sm:text-3xl lg:text-4xl font-extralight tracking-tight text-black !m-0 lg:leading-none">
               users
@@ -89,7 +89,7 @@ export default async function AboutUsSection({ locale = 'en' }: AboutUsSectionPr
             </p>
           </div>
           <p className="text-base sm:text-lg lg:text-xl font-light tracking-tight text-black">
-            Serving 10 million active users, we provide a scalable and secure experience for
+            Serving 1 milion active users, we provide a scalable and secure experience for
             businesses and their customers.
           </p>
         </div>
