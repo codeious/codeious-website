@@ -15,7 +15,7 @@ import {
   HeroSection,
   ShopenFeaturesSection,
   ShopenSection,
-  TeamSection,
+  TeamSection, TechnologySection,
   // TechnologySection,
 } from '@/components/home'
 
@@ -44,7 +44,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         <AboutUsSection locale={locale} />
         <ShopenSection locale={locale} />
         <ShopenFeaturesSection locale={locale} />
-        {/* <TechnologySection locale={locale} /> */}
+        <TechnologySection locale={locale} />
         <TeamSection locale={locale} />
         <FaqSection locale={locale} />
         <ContactSection locale={locale} />
