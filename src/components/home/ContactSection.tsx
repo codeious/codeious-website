@@ -43,12 +43,9 @@ export default async function ContactSection({ locale = 'en' }: ContactSectionPr
                 contact@codeious.io
               </a>
               <p className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-black">
-                +48 500.400.400
-              </p>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-black">
-                ul. Domaniewska 34/5
+                ul. Wielicka 28,
                 <br />
-                Kraków, Poland
+                30-552 Kraków
               </p>
             </div>
           </div>

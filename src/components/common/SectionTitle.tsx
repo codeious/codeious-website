@@ -19,7 +19,7 @@ export function SectionTitle({
       <div className={`w-10 h-2 ${markerBgColor} mb-4`} />
 
       {/* Title text */}
-      <h2 className={`text-3xl xl:text-4xl font-bold ${textColor} leading-tight`}>{title}</h2>
+      <h2 className={`text-4xl xl:text-5xl font-bold ${textColor} leading-tight`}>{title}</h2>
     </div>
   )
 }

@@ -31,61 +31,85 @@ export default async function FaqSection({ locale = 'en' }: FaqSectionProps) {
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="bg-gray-50 border-none rounded-none">
               <AccordionTrigger className="text-xl md:text-xl lg:text-2xl font-semibold tracking-tight text-black p-8 hover:no-underline">
-                How quickly can I start using shopen?
+                1. What makes Shopen different from traditional, all-in-one e-commerce platforms?
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-8 text-lg md:text-xl lg:text-2xl font-light tracking-tight text-black">
-                Once you purchase our ecommerce platform software, it typically becomes available
-                within 3-5 business days, depending on your specific requirements. Our team conducts
-                thorough testing, sets up your account, processes payment, and configures the
-                servers to ensure optimal performance. The ecommerce platform is then tailored to
-                your needs, enabling a seamless launch. For urgent setups, we offer expedited
-                options - contact our 24/7 support for details.
+                Unlike monolithic platforms that bundle all functionalities into one rigid system,
+                Shopen is built on a modern, composable architecture. This means it consists of
+                specialized, independent components (like order management, content, and search)
+                that work together seamlessly. This approach provides superior flexibility,
+                eliminates vendor lock-in, and allows your business to innovate faster by upgrading
+                or replacing individual components without disrupting the entire system.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-2" className="bg-gray-50 border-none rounded-none">
               <AccordionTrigger className="text-xl md:text-xl lg:text-2xl font-semibold tracking-tight text-black p-8 hover:no-underline">
-                How much would it cost me?
+                2. Our business relies on an existing ecosystem (ERP, WMS, PIM). How does Shopen
+                handle integration?
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-8 text-lg md:text-xl lg:text-2xl font-light tracking-tight text-black">
-                Our pricing is customized based on your specific needs and requirements. We offer
-                flexible pricing models including one-time licenses, subscription plans, and
-                enterprise solutions. Contact our sales team for a personalized quote that fits your
-                budget and business goals.
+                Shopen is designed with an &quot;API-first&quot; philosophy, meaning it&apos;s built
+                to communicate and connect with external systems from the ground up. We utilize
+                modern standards like GraphQL to ensure efficient and streamlined data exchange.
+                This allows Shopen to act as a powerful central hub that orchestrates data flow
+                between your existing enterprise systems, rather than forcing you to replace them.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-3" className="bg-gray-50 border-none rounded-none">
               <AccordionTrigger className="text-xl md:text-xl lg:text-2xl font-semibold tracking-tight text-black p-8 hover:no-underline">
-                Are you offering any customization?
+                3. How does the platform ensure high performance and reliability, especially during
+                peak sales periods?
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-8 text-lg md:text-xl lg:text-2xl font-light tracking-tight text-black">
-                Yes, we offer extensive customization options to match your brand and business
-                requirements. Our platform is designed to be highly flexible, allowing custom
-                themes, features, integrations, and workflows. Our development team can work with
-                you to implement specific customizations.
+                <p className="mb-4">
+                  The platform is built using a Cloud-Native approach, leveraging the power of
+                  technologies like Kubernetes. This provides two key advantages:
+                </p>
+                <ul className="space-y-4 list-disc list-inside">
+                  <li>
+                    <b>Automatic Scaling:</b> The system instantly allocates more resources during
+                    traffic spikes (e.g., Black Friday) to ensure fast load times and a smooth
+                    customer experience, then scales back down to optimize costs.
+                  </li>
+                  <li>
+                    <b>High Availability:</b> Its self-healing architecture automatically detects
+                    and resolves issues, ensuring maximum uptime and operational continuity for your
+                    business.
+                  </li>
+                </ul>
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-4" className="bg-gray-50 border-none rounded-none">
               <AccordionTrigger className="text-xl md:text-xl lg:text-2xl font-semibold tracking-tight text-black p-8 hover:no-underline">
-                Can I see a demo?
+                4. We need to launch new marketing campaigns and update content quickly. How does
+                Shopen empower our business teams?
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-8 text-lg md:text-xl lg:text-2xl font-light tracking-tight text-black">
-                Absolutely! We offer live demos and trial access to showcase our platform&apos;s
-                capabilities. Schedule a personalized demo with our team to see how Shopen can
-                transform your ecommerce operations. Contact us to book your demo session.
+                Shopen utilizes a Headless architecture, which separates the customer-facing
+                frontend from the backend business logic. This is complemented by a dedicated
+                Headless CMS, giving your marketing and e-commerce teams complete autonomy. They can
+                create, modify, and publish content or launch new landing pages across any channel
+                (web, mobile app, etc.) independently and instantly, without needing developer
+                intervention for every change.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-5" className="bg-gray-50 border-none rounded-none">
               <AccordionTrigger className="text-xl md:text-xl lg:text-2xl font-semibold tracking-tight text-black p-8 hover:no-underline">
-                Is there a way to view your Roadmap?
+                5. Is Shopen just a storefront, or does it also manage our complex backend
+                operations?
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-8 text-lg md:text-xl lg:text-2xl font-light tracking-tight text-black">
-                Yes, we maintain a public roadmap that outlines our planned features and
-                improvements. You can access it through our documentation portal or contact our team
-                for detailed information about upcoming releases and feature timelines.
+                Shopen is far more than a storefront; its core is the powerful Shopen Order
+                Management System (OMS). This system is the central nervous system for your
+                operations, managing the entire order lifecycle from the moment a customer clicks
+                &quot;buy&quot; to final delivery. It handles complex processes like intelligent
+                order routing to the best fulfillment location, order splitting for multi-warehouse
+                shipments, and seamless coordination with your logistics partners, providing a
+                single source of truth for your entire fulfillment chain.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
